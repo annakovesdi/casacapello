@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from .models import Home
+from .forms import HomeForm
 
-from django.http import HttpResponse
 
+# return homepage
+def home(request):
+    home = Home.objects.all()
+    context = {
+        'home': home,
+    }
+    return render(request, "home/home.html", context)
 
-def index(request):
-    return HttpResponse("Hello, world. xoxo Casa Capello.")

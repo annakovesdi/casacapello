@@ -9,9 +9,37 @@
 {% endblock %}
 
 {% block content %}
-<!--Moving hero images with title overlay-->
-<h1>Casa Capello</h1>
-<!--Reservation Form-->
+
+<section class="hero">
+    <div id="heroimage">
+        {% for h in home %}
+        <img src="{{ h.image.url }}" alt="{{ h.title }} Hero image Restaurant Casa Capello Den Haag">
+        {% endfor %}
+    </div>
+    <div class="overlay">
+        <div class="logo">
+            <a href="{% url 'about' %}">
+                <h1 title="Enter website Casa Capello Restaurant" class="h1">Casa Capello</h1>
+                <h2 class="Hero-text">Fine Dining</h2>
+            </a>
+        </div>
+    </div>
+</section>
+   
+    <!--Reservation Form-->
+    <div class="container">
+        <a href="{% url 'reserve' %}">
+         <h2>Reserve Now</h2>
+        </a>
+    </div>
+   
+
+
 {% endblock %}
 
+{% block js %}
+<script>
+    $("body").addClass("overflow");
+</script>
+{% endblock %}
 

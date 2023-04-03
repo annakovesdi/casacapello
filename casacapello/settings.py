@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # custom
     'home',
+    'about',
+    'menu',
+    'reserve',
     # allauth
     'allauth',
     'allauth.account',
