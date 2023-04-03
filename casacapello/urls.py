@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('about/', include('about.urls')),
     path('menu/', include('menu.urls')),
+    path('wines/', include('wines.urls')),
     path('reserve/', include('reserve.urls')),
     path('favicon.ico',
          RedirectView.as_view(url=staticfiles_storage.url(

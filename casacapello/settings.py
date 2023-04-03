@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'about',
     'menu',
     'reserve',
+    'wines',
     # allauth
     'allauth',
     'allauth.account',
