@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Wines
+from .models import Category, Wines
 
 
 # return wines
@@ -10,4 +10,4 @@ def wines(request):
         'wines': wines,
         'category': category,
     }
-    return render(request, "w/wijnkaart.html", context)
+    return render(request, "wines/wines.html", context)

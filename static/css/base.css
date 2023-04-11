@@ -1,3 +1,163 @@
-Text-footer {
-    color: pink;
+/* General ------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.bannerimage {
+    width: 100%;
+    max-height: 20vh;
+    object-fit: cover;
+}
+
+.linestyle {
+    color: rgb(150, 43, 31);
+}
+
+.padding25 {
+    padding: 25px;
+}
+
+.header {
+    font-family: 'Great Vibes', cursive;
+    color: 1px solid rgb(56, 4, 4);
+}
+
+.white {
+    color: white;
+}
+
+.overlay {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.py4 {
+    padding-top: 15%;
+}
+
+.px2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.mt4 {
+    margin-top: 4rem;
+}
+
+.navbar {
+    background-color: rgba(31, 138, 150, 0.1);
+}
+
+.navbar-nav li a{
+    color: rgb(56, 4, 4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-nav li a:hover {
+    color: rgb(150, 43, 31);
+}
+
+.logo-nav {
+    max-height: 45px;
+    transition: transform 1s;
+}
+
+.logo-nav:hover {
+    transform: scale(1.15);
+}
+
+.navbar-text a{
+    color: rgb(56, 4, 4);
+    text-decoration: none;
+}
+
+
+
+/* Headings ------------------------------------------------------------*/
+#chevron {
+    position: relative;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 6px;
+    height: 60px;
+    width: 200px;
+  }
+  #chevron:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    border:rgb(56, 4, 4);
+    background: red;
+    transform: skew(0deg, 6deg);
+  }
+  #chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    border:rgb(56, 4, 4);
+    background: red;
+    transform: skew(0deg, -6deg);
+  }
+
+
+/* Index ------------------------------------------------------------*/
+.mainlogo {
+    height: 175px;
+    transition: transform 1s;
+}
+
+.mainlogo:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.button {
+    color: white;
+    padding: 1rem;
+    border: 1px solid white;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*!======= fading-css-hero =========*/
+/*!=== https://www.cssscript.com/css-only-crossfading-background-slideshow/ ===*/
+#fading-css-hero{position:relative;top:0;right:0;left:0;height:100vh} 
+.crossfade > figure {padding: 0;margin: 0px;animation: imageAnimation 30s linear infinite 0s;backface-visibility: hidden;color: transparent;left: 0px;opacity: 0;position: absolute;top: 0px; width: 100%;z-index: -1;height: 100%;}
+.crossfade > figure:nth-child(1){background-image: url("../../media/5.jpg");} /*!=== imgages about 1000 x 600 ===*/
+.crossfade > figure:nth-child(2){animation-delay: 6s;background-image: url("../../media/1.jpg");}
+.crossfade > figure:nth-child(3){animation-delay: 12s;background-image: url("../../media/2.jpg");}
+.crossfade > figure:nth-child(4){animation-delay: 18s;background-image: url("../../media/5.jpg");}
+.crossfade > figure:nth-child(5) {animation-delay: 24s;background-image: url("../../media/5.jpg");}
+@keyframes imageAnimation {0% {animation-timing-function: ease-in;opacity: 0;}8% {animation-timing-function: ease-out;opacity: 1;}17% {opacity: 1}25% {opacity: 0}100% {opacity: 0}}
+@media (min-width:64em) {.crossfade > figure:nth-child(1), .crossfade > figure:nth-child(2),.crossfade > figure:nth-child(3),.crossfade > figure:nth-child(4),.crossfade > figure:nth-child(5) {background-size: cover;background-position:center;}}
+
+/* About ------------------------------------------------------------*/
+.aboutimage {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+.quote {
+    font-style: italic;
 }

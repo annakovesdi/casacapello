@@ -2,5 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>Over Ons</h1>
-{% endblock %}
+{% for a in about %}
+<img class="bannerimage" src="{{MEDIA}} /media/{{ a.image2 }}" alt="image of {{ a.title }} by Casa Capello Restaurant Den Haag">
+<div class="container">
+    <h1 class="center padding25 header">{{ a.title }}</h1> 
+    <div class="row">
+        <div class="col-sm">
+            <p>{{ a.text }}</p>
+            <hr class="linestyle">
+            {% if a.text2 %}
+                <p class="quote center">{{ a.text2 }}</p>
+            {% endif %}
+         </div>
+         <div class="col-sm">
+            <img class="aboutimage" src="{{MEDIA}} /media/{{ a.image }}" alt="image of {{ a.title }} by Casa Capello Restaurant Den Haag">
+         </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</div>

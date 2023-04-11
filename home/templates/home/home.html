@@ -2,44 +2,46 @@
 {% load static %}
 
 {% block title %}
-<title>Website Casa Capello Den Haag The Hague</title>
+<title>Website Casa Capello Den Haag The Hague Reserveren Reserve</title>
 {% endblock %}
 
 {% block header %}
 {% endblock %}
 
-{% block content %}
-
-<section class="hero">
-    <div id="heroimage">
-        {% for h in home %}
-        <img src="{{ h.image.url }}" alt="{{ h.title }} Hero image Restaurant Casa Capello Den Haag">
-        {% endfor %}
-    </div>
-    <div class="overlay">
-        <div class="logo">
-            <a href="{% url 'about' %}">
-                <h1 title="Enter website Casa Capello Restaurant" class="h1">Casa Capello</h1>
-                <h2 class="Hero-text">Fine Dining</h2>
-            </a>
+{% block content %}      
+<!--### fading-css-hero ###-->
+<div id="fading-css-hero">
+    <div class="crossfade">
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <div class="px2 py4 white center">
+            <a href="{% url 'about' %}"><img class="mainlogo" src="{{ MEDIA_URL }} media/logo-w.png"
+                    alt="logo casa capello"></a><br>
+            {% for h in home %}
+            <h1 class="title">{{ h.title }}</h1><br>
+            {% endfor %}
+        </div>
+        <div class="mt4 center">
+            <a class="button" href="{% url 'reserve' %}">Reserve Now</a>
         </div>
     </div>
-</section>
-   
-    <!--Reservation Form-->
-    <div class="container">
-        <a href="{% url 'reserve' %}">
-         <h2>Reserve Now</h2>
-        </a>
-    </div>
-   
+</div>
+{% endblock %}
 
-
+{% block footer %}
 {% endblock %}
 
 {% block js %}
-<script>
-    $("body").addClass("overflow");
+<script type="text/javascript">
+     $(function() {
+        $('#post').click(function() {
+            alert("test"); 
+        });
+    });
+    $( "#page-container" ).css( "background-color", "rgba(0, 0, 0, 0.6)" );
 </script>
 {% endblock %}
 
