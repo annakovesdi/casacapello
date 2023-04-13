@@ -29,6 +29,8 @@
 </head>
 
 <body>
+  <div id="page-container">
+    <div id="content-wrap">
     <!--header-->
     <header>
         {% block header %}
@@ -61,15 +63,13 @@
           </nav>
         {% endblock %}
     </header>
-
-<div id="page-container">
-    <div id="content-wrap">
         {% block allauth%}
         {% endblock %}
 
         {% block content %}
         {% endblock %}
-        <footer>
+        </div>
+    <footer>
             <!--footer with copyright, date-->
             {% block footer %}
             <div class="footer">
@@ -93,6 +93,6 @@
             {% block js %}
             {% endblock %}
         </footer>
-    </div>
+</div>
     </body>
     </html>

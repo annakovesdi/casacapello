@@ -17,6 +17,7 @@ class Menu(models.Model):
     name = models.CharField(max_length=40)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.CharField(max_length=250)
+    hide = models.BooleanField()
 
     def __str__(self):
         return str(self.title)
