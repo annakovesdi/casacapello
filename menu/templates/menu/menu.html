@@ -6,7 +6,116 @@
 <div class="container">
     <h1 class="center padding25 header">Menu</h1> 
     <div class="row">
-
+        <h2 class="center">Antipasti</h2>
+        <hr class="linestyle">
     </div>
+        {% for item in antipasti %}
+        {% if not item.hide %}
+        <!--Cards with menu items in category-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <h3 class="card-title">{{ item.name }}</h3>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <h3 class="price center">{{item.price}}</h3>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        {% endif %}
+        {% endfor %}
+    <div class="row">
+        <h2 class="center">Primi</h2>
+        <hr class="linestyle">
+    </div>
+        {% for item in primi %}
+        {% if not item.hide %}
+        <!--Cards with menu items in category-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <h3 class="card-title">{{ item.name }}</h3>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <h3 class="price center">{{item.price}}</h3>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="row">
+            <h2 class="center">Secondi</h2>
+            <hr class="linestyle">
+        </div>
+            {% for item in secondi %}
+            {% if not item.hide %}
+            <!--Cards with menu items in category-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="card-title">{{ item.name }}</h3>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <p>{{ item.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <h3 class="price center">{{item.price}}</h3>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="row">
+                <h2 class="center">Dolci</h2>
+                <hr class="linestyle">
+            </div>
+                {% for item in dolci %}
+                {% if not item.hide %}
+                <!--Cards with menu items in category-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <h3 class="card-title">{{ item.name }}</h3>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <p>{{ item.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <h3 class="price center">{{item.price}}</h3>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                {% endif %}
+                {% endfor %}
 </div>
 {% endblock %}
