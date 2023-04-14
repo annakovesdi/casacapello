@@ -39,3 +39,13 @@ def edit_about(request):
     }
     return render(request, template, context)
 
+@login_required
+def master_manager(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only an Admin can access this page')
+        return redirect(reverse('home'))
+    template = 'about/master_manager.html'
+    about = About.objects.all()
+
+    return render(request, template)
+

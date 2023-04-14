@@ -6,7 +6,97 @@
 <div class="container">
     <h1 class="center padding25 header">Wijnkaart</h1> 
     <div class="row">
-
+        <h2 class="center">I nostri bianchi</h2>
+        <hr class="linestyle">
     </div>
+        {% for item in bianchi %}
+        {% if not item.hide %}
+        <!--Cards with wine items in category-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <h3 class="card-title">{{ item.name }}</h3>
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="price center">{{item.price}}
+                            {% if item.price2 %}
+                            / {{item.price2}}</h3>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>    
+        </div>
+        {% endif %}
+        {% endfor %}
+    <div class="row">
+        <h2 class="center">I nostri rossi</h2>
+        <hr class="linestyle">
+    </div>
+    {% for item in rossi %}
+    {% if not item.hide %}
+    <!--Cards with menu items in category-->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <h3 class="card-title">{{ item.name }}</h3>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <p>{{ item.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3 class="price center">{{item.price}}
+                        {% if item.price2 %}
+                        / {{item.price2}}</h3>
+                        {% endif %}
+                </div>
+            </div>
+        </div>    
+    </div>
+    {% endif %}
+    {% endfor %}
+        <div class="row">
+            <h2 class="center">I nostri spumanti</h2>
+            <hr class="linestyle">
+        </div>
+        {% for item in spumanti %}
+        {% if not item.hide %}
+        <!--Cards with menu items in category-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <h3 class="card-title">{{ item.name }}</h3>
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="price center">{{item.price}}
+                            {% if item.price2 %}
+                            / {{item.price2}}</h3>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>    
+        </div>
+        {% endif %}
+        {% endfor %}
 </div>
 {% endblock %}

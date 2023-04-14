@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="header center padding25">Manager</h1>
+    <h2 class="black">Go to general management area's or choose the fast add option</h2>
+    <hr class="linestyle padding5">
+    <button class="edit"><a href="{% url 'edit_about' %}">Edit About Page</a></button>
+    <p>Upload a new picture, change text in the Over Ons section</p>
+    <hr class="linestyle padding5">
+    <button class="edit"><a href="{% url 'management' %}">Menu Management page</a></button><button class="edit"><a href="{% url 'add_item' %}">Fast Add menu item</a></button>
+    <p>Upload a new menu item, change existing ones or delete them</p>
+    <hr class="linestyle padding5">
+    <button class="edit"><a href="{% url 'wine_management' %}">Wine Management page</a></button><button class="edit"><a href="{% url 'add_wine' %}">Fast Add wine item</a></button>
+    <p>Upload a new menu item, change existing ones or delete them</p>
+    <hr class="linestyle padding5">
+    <button class="edit"><a href="">Reservations Management page</a></button>
+    <p>Upload a new menu item, change existing ones or delete them</p>
+    <hr class="linestyle padding5">
+    <button class="edit"><a href="">Log Out</a></button>
+</div>
+
+{% endblock %}
