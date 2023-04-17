@@ -18,6 +18,7 @@ class Wines(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     price2 = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     description = models.CharField(max_length=250)
+    imagebanner = models.ImageField(null=True, blank=True)
     hide = models.BooleanField(default=False)
 
     def __str__(self):

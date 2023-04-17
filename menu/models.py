@@ -15,7 +15,9 @@ class Menu(models.Model):
         'Category', null=False, blank=False,
         on_delete=models.RESTRICT, related_name='category')
     name = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+                                blank=True)
+    imagebanner = models.ImageField(null=True, blank=True)
     description = models.CharField(max_length=250)
     hide = models.BooleanField(default=False)
 

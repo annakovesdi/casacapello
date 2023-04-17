@@ -3,7 +3,7 @@
 
 {% block content %}
 <!--home management page-->
-<h2>Edit About</h2>
+<h2 class="center padding25">Edit About</h2>
 <section>
     <div class="container container-fluid">
         <form action="{% url 'edit_about' %}" method="POST" enctype="multipart/form-data" id="edit_about">
@@ -13,7 +13,7 @@
             </div>
             <div class="row center"> 
                 <div class="col">             
-                    <button><a href="{% url 'about' %}" class="button">Undo</a></button>// <button type="submit" id="submit-button" class="button">Save</button>
+                    <button class="edit"><a href="{% url 'about' %}">Undo</a></button>// <button type="submit" id="submit-button" class="edit">Save</button>
                 </div>
             </div>
         </form>
