@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--Edit work instance form-->
+<h2 class="center padding25">Edit {{ item.name }} </h2>
+<div class="container">
+        <h3>Please fill out the form below to edit item</h3>
+        <hr>
+        <form action="{% url 'edit_wine' item.id %}" method="POST" enctype="multipart/form-data" id="edit_wine">
+            {% csrf_token %}
+            <div class="form">
+                {{ form.media }}
+                {{ form | crispy }}
+            </div>
+            <div class="row center">
+                <div class="col">             
+                    <button class="edit"><a href="{% url 'wine_management' %}">Undo</a></button>// <button type="submit" id="submit-button" class="edit">Save</button> //<button class="edit"><a href="{% url 'delete_item' item.id %}" class="confirm-delete">Delete Item</a></button>
+                </div>
+            </div>
+        </form>
+</div>
+{% endblock %}

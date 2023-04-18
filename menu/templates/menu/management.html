@@ -37,7 +37,7 @@
                     </a>
                 </div>
                 <div class="col-4 center">     
-                    <button class="edit">Edit</button>
+                    <button class="edit"><a href="{% url 'edit' item.id %}">Edit</a></button>
                     <button class="edit"><a href="{% url 'delete_item' item.id %}" class="confirm-delete">Delete Item</a></button>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     </a>
                 </div>
                 <div class="col-4 center">     
-                    <button class="edit">Edit</button>
+                    <button class="edit"><a href="{% url 'edit' item.id %}">Edit</a></button>
                     <button class="edit"><a href="{% url 'delete_item' item.id %}" class="confirm-delete">Delete Item</a></button>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                     </a>
                 </div>
                 <div class="col-4 center">     
-                    <button class="edit">Edit</button>
+                    <button class="edit"><a href="{% url 'edit' item.id %}">Edit</a></button>
                     <button class="edit"><a href="{% url 'delete_item' item.id %}" class="confirm-delete">Delete Item</a></button>
                 </div>
             </div>

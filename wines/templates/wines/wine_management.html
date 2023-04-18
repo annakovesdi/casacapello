@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--menu management page-->
+<section>
+    <div class="container-fluid">
+        <div class="center padding25">
+             <h3 class="padding10">Choose wine to edit</h3>
+            <button class="edit"><a href="{% url 'add_wine' %}">Add new wine to menu</a></button>
+        </div>
+        <div class="row">
+            <h2 class="center">Bianchi</h2>
+            <hr class="linestyle">
+            {% for item in bianchi %}
+            <div class="row">
+                <div class="col-8">
+                    <a href="{% url 'edit_wine' item.id %}">
+                        <p class="padding10">{{ item.name }} / {{ item.price }} / {% if item.price2 %} {{ item.price2 }} {% endif %}</p>
+                    </a>
+                </div>
+                <div class="col-4 center">     
+                    <button class="edit"><a href="{% url 'edit_wine' item.id %}">Edit</a></button>
+                    <button class="edit"><a href="{% url 'delete_wine' item.id %}" class="confirm-delete">Delete Item</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <h2 class="center">Rossi</h2>
+            <hr class="linestyle">
+            {% for item in rossi %}
+            <div class="row">
+                <div class="col-8">
+                    <a href="{% url 'edit_wine' item.id %}">
+                        <p class="padding10">{{ item.name }} / {{ item.price }}  / {% if item.price2 %} {{ item.price2 }} {% endif %}</p>
+                    </a>
+                </div>
+                <div class="col-4 center">     
+                    <button class="edit"><a href="{% url 'edit_wine' item.id %}">Edit</a></button>
+                    <button class="edit"><a href="{% url 'delete_wine' item.id %}" class="confirm-delete">Delete Item</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <h2 class="center">Spumanti</h2>
+            <hr class="linestyle">
+            {% for item in spumanti %}
+            <div class="row">
+                <div class="col-8">
+                    <a href="{% url 'edit_wine' item.id %}">
+                        <p class="padding10">{{ item.name }} / {{ item.price }}  / {% if item.price2 %} {{ item.price2 }} {% endif %}</p>
+                    </a>
+                </div>
+                <div class="col-4 center">     
+                    <button class="edit"><a href="{% url 'edit_wine' item.id %}">Edit</a></button>
+                    <button class="edit"><a href="{% url 'delete_wine' item.id %}" class="confirm-delete">Delete Item</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
