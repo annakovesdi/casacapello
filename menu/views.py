@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Category, Menu
-from .forms import MenuForm
+from .forms import MenuForm, CategoryForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -31,12 +31,24 @@ def management(request):
     primi = Menu.objects.filter(category__name__icontains='primi')
     secondi = Menu.objects.filter(category__name__icontains='secondi')
     dolci = Menu.objects.filter(category__name__icontains='dolci')
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Succesfully added image item')
+            return redirect(reverse('management'))
+        else:
+            messages.error(request, 'Failed to add item. Please check your input.')
+    else:
+        form = CategoryForm()
+    form = CategoryForm
 
     context = {
         'antipasti': antipasti,
         'primi': primi,
         'secondi': secondi,
         'dolci': dolci,
+        'form': form,
     }
     return render(request, "menu/management.html", context)
 
