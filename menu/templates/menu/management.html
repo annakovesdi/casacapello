@@ -11,18 +11,18 @@
             <hr class="linestyle">
         </div>
         <div class="row">
+            <form action="{% url 'management' %}" method="POST" enctype="multipart/form-data" id="imagebanner">
             <div class="col-12 col-md-8">
-                <form action="{% url 'management' %}" method="POST" enctype="multipart/form-data" id="imagebanner">
                 {% csrf_token %}
                     <div class="form">
                         {{ form.media }}
                         {{ form | crispy }}
                     </div>
-                </form>
             </div>
             <div class="col-12 col-md-4 center">
                 <button type="submit" id="submit-button" class="edit">Save</button>
             </div>
+        </form>
         </div> 
         <div class="row">
             <h2 class="center">Antipasti</h2>

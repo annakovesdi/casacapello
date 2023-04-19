@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Menu
+from .models import Category, Menu, BannerImage
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -17,6 +17,11 @@ class MenuAdmin(admin.ModelAdmin):
         'hide',
     )
 
+class BannerImageAdmin(admin.ModelAdmin):
+    list_display = (
+        'image',
+    )
 
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(BannerImage, BannerImageAdmin)

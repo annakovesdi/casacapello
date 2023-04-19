@@ -1,18 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Category, Menu
-from .forms import MenuForm, CategoryForm
+from .models import Category, Menu, BannerImage
+from .forms import MenuForm, BannerImageForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
 # return menu
 def menu(request):
+    bannerimage = BannerImage.objects.all()
     antipasti = Menu.objects.filter(category__name__icontains='antipasti')
     primi = Menu.objects.filter(category__name__icontains='primi')
     secondi = Menu.objects.filter(category__name__icontains='secondi')
     dolci = Menu.objects.filter(category__name__icontains='dolci')
 
     context = {
+        'bannerimage': bannerimage,
         'antipasti': antipasti,
         'primi': primi,
         'secondi': secondi,
@@ -31,17 +33,20 @@ def management(request):
     primi = Menu.objects.filter(category__name__icontains='primi')
     secondi = Menu.objects.filter(category__name__icontains='secondi')
     dolci = Menu.objects.filter(category__name__icontains='dolci')
+    existing_item = BannerImage.objects.all()
     if request.method == 'POST':
-        form = CategoryForm(request.POST, request.FILES)
+        form = BannerImageForm(request.POST, request.FILES)
         if form.is_valid():
+            if existing_item:
+                existing_item.delete()
             form.save()
             messages.success(request, 'Succesfully added image item')
             return redirect(reverse('management'))
         else:
             messages.error(request, 'Failed to add item. Please check your input.')
     else:
-        form = CategoryForm()
-    form = CategoryForm
+        form = BannerImageForm()
+    form = BannerImageForm
 
     context = {
         'antipasti': antipasti,

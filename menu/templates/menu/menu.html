@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
-<img class="bannerimage" src="{{MEDIA}} /media/5.jpg" alt="image of  by Casa Capello Restaurant Den Haag">
+{% for item in bannerimage %}
+<img class="bannerimage" src="{{MEDIA}} /media/{{ item.image }}" alt="image of  by Casa Capello Restaurant Den Haag">
+{% endfor %}
 <div class="container">
     <h1 class="center padding25 header">Menu</h1> 
     <div class="row">

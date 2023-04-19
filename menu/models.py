@@ -5,7 +5,6 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
     name = models.CharField(max_length=60)
-    imagebanner = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
@@ -23,3 +22,7 @@ class Menu(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class BannerImage(models.Model):
+    image = models.ImageField(null=True, blank=True)
