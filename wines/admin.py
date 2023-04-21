@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Wines
+from .models import Category, Wines, BannerImage
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -18,5 +18,13 @@ class WinesAdmin(admin.ModelAdmin):
     )
 
 
+
+class BannerImageAdmin(admin.ModelAdmin):
+    list_display = (
+        'image',
+    )    
+
+
 admin.site.register(Wines, WinesAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(BannerImage, BannerImageAdmin)

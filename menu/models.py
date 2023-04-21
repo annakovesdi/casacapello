@@ -25,4 +25,5 @@ class Menu(models.Model):
 
 
 class BannerImage(models.Model):
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True,
+                              verbose_name='Change banner image menupage')

@@ -1,17 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Category, Wines
-from .forms import WinesForm
+from .models import Category, Wines, BannerImage
+from .forms import WinesForm, BannerImageForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
 # return menu
 def wines(request):
+    bannerimage = BannerImage.objects.all()
     bianchi = Wines.objects.filter(category__name__icontains='bianchi')
     rossi = Wines.objects.filter(category__name__icontains='rossi')
     spumanti = Wines.objects.filter(category__name__icontains='spumanti')
 
     context = {
+        'bannerimage': bannerimage,
         'bianchi': bianchi,
         'rossi': rossi,
         'spumanti': spumanti,
@@ -28,11 +30,26 @@ def wine_management(request):
     bianchi = Wines.objects.filter(category__name__icontains='bianchi')
     rossi = Wines.objects.filter(category__name__icontains='rossi')
     spumanti = Wines.objects.filter(category__name__icontains='spumanti')
+    existing_item = BannerImage.objects.all()
+    if request.method == 'POST':
+        form = BannerImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            if existing_item:
+                existing_item.delete()
+            form.save()
+            messages.success(request, 'Succesfully added image item')
+            return redirect(reverse('wine_management'))
+        else:
+            messages.error(request, 'Failed to add item. Please check your input.')
+    else:
+        form = BannerImageForm()
+    form = BannerImageForm
 
     context = {
         'bianchi': bianchi,
         'rossi': rossi,
         'spumanti': spumanti,
+        'form': form,
     }
     return render(request, "wines/wine_management.html", context)
 

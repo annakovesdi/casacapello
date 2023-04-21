@@ -9,6 +9,20 @@
              <h3 class="padding10">Choose wine to edit</h3>
             <button class="edit"><a href="{% url 'add_wine' %}">Add new wine to menu</a></button>
         </div>
+        <form action="{% url 'wine_management' %}" method="POST" enctype="multipart/form-data" id="imagebanner">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    {% csrf_token %}
+                    <div class="form">
+                        {{ form.media }}
+                        {{ form | crispy }}
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 center">
+                    <button type="submit" id="submit-button" class="edit">Save</button>
+                </div>
+            </div>
+        </form>
         <div class="row">
             <h2 class="center">Bianchi</h2>
             <hr class="linestyle">

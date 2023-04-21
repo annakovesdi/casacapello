@@ -16,10 +16,16 @@ class Wines(models.Model):
         on_delete=models.SET_NULL, related_name='category')
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    price2 = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price2 = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+                                 blank=True)
     description = models.CharField(max_length=250)
     imagebanner = models.ImageField(null=True, blank=True)
     hide = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.name)
+
+
+class BannerImage(models.Model):
+    image = models.ImageField(null=True, blank=True, 
+                              verbose_name='Change banner image wines page')

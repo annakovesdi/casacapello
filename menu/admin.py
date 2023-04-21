@@ -17,10 +17,12 @@ class MenuAdmin(admin.ModelAdmin):
         'hide',
     )
 
+
 class BannerImageAdmin(admin.ModelAdmin):
     list_display = (
         'image',
     )
+
 
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Category, CategoryAdmin)

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'fontawesomefree',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
@@ -176,3 +177,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# date and time picker
+BOOTSTRAP_DATEPICKER_PLUS = {
+    "options": {
+        "locale": "nl",
+        "showTodayButton": True,
+        "sideBySide": True,
+        "daysOfWeekDisabled": '0,6'
+    },
+    "variant_options": {
+        "date": {
+            "format": "MM/DD/YYYY",
+        },
+    }
+}
