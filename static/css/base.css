@@ -143,11 +143,14 @@ a {
 
 /* Reservation form ------------------------------------------------------------*/
 
-.radio{
-    min-width: 100px;
-    
+.placement-block {
+    text-align: right;
+    padding-right: 10%;
 }
 
+.bold {
+    font-weight: 600;
+}
 
 
 /* Management ------------------------------------------------------------*/

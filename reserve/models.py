@@ -4,7 +4,13 @@ import datetime
 from django.utils import timezone
 
 
+class Reservation_Date(models.Model):
+    date = models.DateField()
+    is_Full = models.BooleanField()
+
+
 class Reservation(models.Model):
+    reservation_date = models.ForeignKey(relatedField='date')
     name = models.CharField(max_length=254)
     persons = models.IntegerField(validators=[
             MaxValueValidator(8),
