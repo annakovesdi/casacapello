@@ -9,11 +9,16 @@
 {% for item in bannerimage %}
 <img class="bannerimage" src="{{MEDIA}} /media/{{ item.image }}" alt="image of  by Casa Capello Restaurant Den Haag">
 {% endfor %}
+{% if full %}
+  {% for f in full %}
+    <p hidden>{{ f }}</p>
+  {% endfor %}
+{% endif %}
 <div class="container">
     <h1 class="center padding25 header">Reserveren</h1> 
       <div class="row padding25"> 
         <div class="col-6 placement-block">
-          <div class="dropup">
+          <div class="dropup" id="available">
             <button class="dropdown-toggle edit time" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Kies een tijd
             </button>
@@ -27,6 +32,9 @@
             <h3>Tijd: <span id="ViewTime" class="bold"></span></h3>
             </div>
            
+          </div>
+          <div id="full" class="hidden">
+            <p>Onze excuses, maar de door U geselecteerde datum is vol voor online reserveringen. Bel ons over de mogelijkheden op <a href="tel:+31702250303"><i class="fa-solid fa-phone"></i> 070-2250303</a></p>
           </div>
         </div>      
         <div class="col-6">

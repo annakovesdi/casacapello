@@ -10,13 +10,6 @@ class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
         exclude = ['reserved_time', 'date', 'time']
-        widgets = {
-            'time': TimePickerInput(
-                options={
-                    'enabledHours': [17, 18, 19, 20, 21],
-                }
-                ),
-        }
 
     def __innit__(self, *args, **kwargs):
         super().__innit__(*args, **kwargs)

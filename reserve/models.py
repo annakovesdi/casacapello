@@ -6,23 +6,26 @@ from django.utils import timezone
 
 class Reservation_Date(models.Model):
     date = models.DateField()
-    is_Full = models.BooleanField()
+    is_full = models.BooleanField()
+
+    def __str__(self):
+       return self.date
 
 
 class Reservation(models.Model):
-    reservation_date = models.ForeignKey(relatedField='date')
+    # reservation_date = models.ForeignKey(Reservation_Date, on_delete=models.CASCADE, default=1, null=True)
     name = models.CharField(max_length=254)
     persons = models.IntegerField(validators=[
             MaxValueValidator(8),
             MinValueValidator(1)
         ])
-    date = models.CharField(null=True, blank=True, max_length=10)
-    time = models.DateTimeField(null=True, blank=True)
+    date = models.CharField(max_length=10)
+    time = models.DateTimeField()
     reserved_time = models.DateTimeField(auto_now=True)
-    email_address = models.CharField(max_length=254, null=True, blank=True)
+    email_address = models.CharField(max_length=254)
     phone = models.IntegerField(validators=[
             MinValueValidator(10)
-        ], null=True, blank=True)
+        ])
 
     def __str__(self):
         return str(self.name)

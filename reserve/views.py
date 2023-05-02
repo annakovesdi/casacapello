@@ -1,11 +1,12 @@
 from django.shortcuts import render
-from .models import Reservation, BannerImage
+from .models import Reservation, BannerImage, Reservation_Date
 from .forms import ReservationForm, BannerImageForm
 
 
 # return reserve page
 def reserve(request):
     bannerimage = BannerImage.objects.all()
+    full = Reservation_Date.objects.filter(is_full=True)
     if request.method == 'POST':
         form = ReservationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -37,6 +38,7 @@ def reserve(request):
     context = {
         'form': form,
         'bannerimage': bannerimage,
+        'full': full,
     }
     return render(request, "reserve/reserve.html", context)
 
